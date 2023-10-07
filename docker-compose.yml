@@ -1,6 +1,12 @@
-version : "3.3"
-services :
-  web :
-     image : trainwithshubham/my-note-app:latest
-     ports :
-         - "8000:8000"
+---
+version: '3.3'
+services:
+  web_server:
+    build: ./mynotes/build
+    ports:
+      - 80:80
+
+  backend:
+    build: ./
+    ports:
+      - 3000:3000
