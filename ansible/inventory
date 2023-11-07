@@ -1,0 +1,2 @@
+[alan_server]
+alan ansible_host= ansible_connection=ssh

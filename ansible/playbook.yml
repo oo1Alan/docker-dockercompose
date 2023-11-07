@@ -1,0 +1,12 @@
+---
+- name: Install Requirements for containarize python web app
+  hosts: #"Yours inventory address"
+  become: true
+  roles:
+   - docker_installation
+   - nginx_installation
+
+  task:
+   - name: docker image deployment
+     copy:
+       src: 
