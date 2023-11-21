@@ -1,0 +1,33 @@
+---
+- name: Django note app
+  hosts: alan_computer
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: pull docker file
+      shell: docker pull alan00/todoapp:latest
+      register: docker_pull
+
+
+    - name: show outputof the command
+      debug:
+       var: docker_pull.stdout
+
+
+
+    - name: run docker conatiner
+      shell: docker run -d -p 3000:3000 --name todo alan00/todoapp:latest
+      register: docker_cont
+
+
+    - name: show outputof the command
+      debug:
+       var: docker_cont.stdout
+
+
+

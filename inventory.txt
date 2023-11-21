@@ -1,0 +1,2 @@
+[alan_computer]
+alan ansible_host=192.168.100.23 ansible_ssh_user=alan
